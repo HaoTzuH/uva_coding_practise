@@ -28,13 +28,13 @@ int main()
         //--------
         //start[px][py]=1;
 		
-		for(i = 0 ; i <105;i++)
-		{
-			for(j = 0 ;j<105;j++)
-			{
-				start[i][j]=0;
-			}
-		}
+	for(i = 0 ; i <105;i++)
+	{
+             for(j = 0 ;j<105;j++)
+             {
+		 start[i][j]=0;
+             }
+	}
         for(i = maplen-1; i >= 0; i--)
         {
             for(j = 0; j < maplen; j++)
@@ -73,12 +73,12 @@ int main()
                 start[i][j] %= 1000007;
             }
         }
-         int ans = 0;
+        int ans = 0;
         for(i = 0; i < maplen; i++){
             if(mapp[0][i] != 'B'){
                 ans += start[0][i], ans %= 1000007;
-			}
-		}
+            }
+	}
         printf("Case %d: %d\n", ++cases, ans);
     }
     return 0;
