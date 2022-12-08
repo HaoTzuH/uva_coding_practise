@@ -1,6 +1,6 @@
 //output first N male bees
 // second total bees
-// 1 male 1 famale
+// 1boy = 1 male + 1 famale
 //input N year
 //寫遞迴會call暴記憶體
 
