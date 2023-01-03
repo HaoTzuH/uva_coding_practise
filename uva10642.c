@@ -1,4 +1,7 @@
-/*#include <stdio.h>
+/*
+超過int範圍未解
+
+#include <stdio.h>
 
 
 long loc(int x , int y)
