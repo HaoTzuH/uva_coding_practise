@@ -35,7 +35,7 @@ int main()
     {
         array[i]= 0;//inital
     }
-    for(i = 1; i <=1000; i++)//10
+    for(i = 1; i <=1000; i++)
     {
         for(j = 1 ; j <= i ;j++)
         {
