@@ -37,61 +37,61 @@ int main()
         
         isLost = 0;
         for( i = 0; i < 4; ++i)
-		    {
-			       if(robot.orient == orient[i])
-			       {
-				        robot.dir = i;
-				        break;
-			       }
-		     }
-		     scanf("%s",&longe);
+        {
+             if(robot.orient == orient[i])
+             {
+                robot.dir = i;
+                break;
+             }
+        }
+        scanf("%s",&longe);
 	       //printf("%d", strlen(longe));
-		     for(i = 0 ; i<strlen(longe) ;i++)
+        for(i = 0 ; i<strlen(longe) ;i++)
          {
              //enter orientation L R
              //printf("%c ",longe[i]);
            
-			       if(longe[i] == 'L')
-			       {
-				        // Rotate the direction 
-				        robot.dir = (robot.dir + 3) % 4;
-				        robot.orient = orient[robot.dir];
-			       }
-			       if(longe[i] == 'R')
-			       {
-				        robot.dir = (robot.dir + 1 ) % 4;
-				        robot.orient = orient[robot.dir];
-			       }
-			       if (longe[i] == 'F')
-			       {
+             if(longe[i] == 'L')
+             {
+		// Rotate the direction 
+                robot.dir = (robot.dir + 3) % 4;
+                robot.orient = orient[robot.dir];
+             }
+             if(longe[i] == 'R')
+             {
+	        robot.dir = (robot.dir + 1 ) % 4;
+                robot.orient = orient[robot.dir];
+             }
+             if (longe[i] == 'F')
+             {
                  nextX = robot.x + moving[robot.dir][0];
                  nextY = robot.y + moving[robot.dir][1];
                 // printf("%d %d ",nextX,nextY);
                  if(nextX < 0 || nextX > upper_x || nextY > upper_y || nextY < 0)
-				         {
-					          if(map[robot.x][robot.y] < 0)
-					          {
-						           continue;
-					          }
-					          isLost = 1;
-					// Let the position before robot out of bound become blocked
-                    map[robot.x][robot.y] = -1;
-                    break;
-				      }
-				      robot.x = nextX;
-				      robot.y = nextY;
+                 {
+                    if(map[robot.x][robot.y] < 0)
+                    {
+                       continue;
+                    }
+                    isLost = 1;
+		   // Let the position before robot out of bound become blocked
+                   map[robot.x][robot.y] = -1;
+                   break;
+                 }
+                 robot.x = nextX;
+                 robot.y = nextY;
 				
-			     }
+	      }
 			
-        }
-        if(isLost)
-		    {
-			       printf("%d %d %c LOST",robot.x, robot.y, robot.orient);
-		    }
-	      else
-	      {
-		       printf("%d %d %c",robot.x, robot.y, robot.orient);
-		    }
+         }
+         if(isLost)
+	 {
+            printf("%d %d %c LOST",robot.x, robot.y, robot.orient);
+         }
+	 else
+	 {
+            printf("%d %d %c",robot.x, robot.y, robot.orient);
+         }
         printf("\n");
        
     }
