@@ -6,7 +6,6 @@ int main(){
     int testcase = 0, i = 0,countday = 0;
     scanf("%d", &testcase);
     int monarr[13] = {0,31,28,31,30,31,30,31,31,30,31,30,31};
-    //string days[] ={"Saturday","Sunday","Monday","Tuesday","Wednesday","Thursday","Friday"};
     int day = 0 ,month = 0;
     while(testcase--)
     {
