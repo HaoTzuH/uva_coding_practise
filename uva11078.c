@@ -22,7 +22,7 @@ int main()
             scanf("%d", &n_score[i]);
         }
         int now = n_score[0];
-        Max = now - n_score[i];
+        Max = now - n_score[1];
         for(i = 1; i < n_course;i++)
         {
            Max = maxfun(Max, now - n_score[i]);
