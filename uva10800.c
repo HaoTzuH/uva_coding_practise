@@ -28,51 +28,51 @@ int main()
            if(inarray[RCFcount] == '\n') break;
            RCFcount++;
        }
-	   if(RCFcount < 1) break;
+       if(RCFcount < 1) break;
        for(i = 0;i < RCFcount;i++ )
-	   {
-		    if(inarray[i] == 'R')
-			{
-				if(i && inarray[i-1] == 'R')
-				{
-					y++;
-				}
-				output[y][i] = '/';
-				if(inarray[i+1] == 'C')
-				{
-					y++;
-				}
-			}
-			else if(inarray[i] =='F')
-			{
-				if(i && inarray[i-1] != 'R')
-				{
-					y--;
-				}
-				output[y][i] = '\\';
-			}
-			else
-			{
-				output[y][i] = '_';
-			}
-			if(y > mx)  mx = y;
+       {
+	   if(inarray[i] == 'R')
+           {
+		if(i && inarray[i-1] == 'R')
+		{
+                   y++;
+		}
+                output[y][i] = '/';
+                if(inarray[i+1] == 'C')
+		{
+                   y++;
+                }
+            }
+            else if(inarray[i] =='F')
+            {
+                 if(i && inarray[i-1] != 'R')
+                 {
+                    y--;
+                 }
+                 output[y][i] = '\\';
+            }
+            else
+            {
+		output[y][i] = '_';
+            }
+            if(y > mx)  mx = y;
             if(y < mn)  mn = y;
 			
-	   }
+	}
 	   //printf("%d %d", mx,mn);
        
-	   for(i = mx ; i >= mn ; i--)
-	   {
-		   putchar('|'), j = 50;
+	for(i = mx ; i >= mn ; i--)
+	{
+           putchar('|'), j = 50;
            putchar(' ');
            while(!output[i][j]) j--;
            for(k = 0; k <= j; k++)
                 printf("%c", !output[i][k] ? ' ' : output[i][k]);
            puts("");
-	   }
+	}
 	   
 	   
-      putchar('+');
+        putchar('+');
         for(i = -1; i <= RCFcount; i++)
             putchar('-');
       puts("\n");
