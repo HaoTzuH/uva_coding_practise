@@ -1,4 +1,55 @@
+//新想法
 #include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+int main()
+{
+   int N = 0;
+   int count =0 , i = 0, k = 0;
+   char base2[32];
+   
+   while(scanf("%d", &N) != EOF)
+   {
+       count = 0;
+       if(N == 0)break;
+       for( i = 0; i<32;i++) base2[i] =' ';
+       printf("The parity of");
+       i = 0;
+       while(N > 0)
+       {
+           if(N==1)
+           {
+              
+              base2[i] = '1';
+              count++;
+              i++;
+              break;
+           }
+           if(N%2)
+           {
+              count++;
+              base2[i] = '1';
+           }
+           else
+           {
+               base2[i] = '0';
+           }
+           i++;
+           N = N /2;
+           
+       }
+       k = i;
+       //printf("%d ",k);
+       for( i = k; i >= 0;i--)
+       {
+          printf("%c",base2[i]);  
+       }
+       printf(" is %d (mod 2).\n",count);
+   }
+}
+
+/*#include <stdio.h>
 #include <math.h>
 int main()
 {
@@ -37,3 +88,4 @@ int main()
        printf(" is %d (mod 2).\n",countone);
    }
 }
+*/
