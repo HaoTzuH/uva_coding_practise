@@ -43,10 +43,10 @@ int main()
            {
               for(k = j+1; k < count;k++)
               {
-                  if(ascii[i]>ascii[k])
+                  if(ascii[j]>ascii[k])
                   {
-                     temp = ascii[i];
-                     ascii[i]=ascii[k];
+                     temp = ascii[j];
+                     ascii[j]=ascii[k];
                      ascii[k] = temp;
                   }
               }
